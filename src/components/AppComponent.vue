@@ -24,6 +24,9 @@ export default {
 <template>
     <div>
         <h1>Sono un componente!</h1>
+        <div v-for="evento in store.events">
+            {{ evento.name }}
+        </div>
     </div>
 </template>
 
