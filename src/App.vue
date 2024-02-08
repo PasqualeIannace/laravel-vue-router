@@ -1,12 +1,12 @@
 <script>
-import AppComponent from "./components/AppComponent.vue"
+import AppNav from "./components/AppNav.vue"
 
 import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
 
 export default {
 	components: {
-		AppComponent
+		AppNav
 	},
 	data() {
 		return {
@@ -33,12 +33,8 @@ export default {
 
 <template>
 	<main>
-		<AppComponent />
-
-		<button class="btn btn-primary">
-			<font-awesome-icon icon="fa-solid fa-home" class="me-1" />
-			<span>Primary button</span>
-		</button>
+		<AppNav />
+		<router-view></router-view>
 	</main>
 </template>
 
