@@ -3,7 +3,7 @@ import { store } from "../store.js" //state management
 
 export default {
     components: {
-        name: "AppHome"
+        name: "HomePage"
     },
 
     data() {

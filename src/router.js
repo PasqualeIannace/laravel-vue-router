@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AppHome from './pages/AppHome.vue';
-import AppSponsor from './pages/AppSponsor.vue';
+import HomePage from './pages/HomePage.vue';
+import SponsorList from './pages/SponsorList.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -8,12 +8,12 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: AppHome
+            component: HomePage
         },
         {
             path: '/sponsor',
             name: 'sponsor',
-            component: AppSponsor
+            component: SponsorList
         },
     ]
 });
