@@ -26,7 +26,9 @@ export default {
                     <p class="card-text">{{ evento.location }}</p>
                     <p class="card-text"><strong>Data evento</strong> {{ evento.date }}</p>
                     <span class="d-flex gap-2 ">
-                        <!-- <a href="{{route('admin.events.show', $event->id)}}" class="btn btn-primary ">Dettagli</a> -->
+                        <router-link :to="{ name: 'evento', params: { id: evento.id } }" class="btn btn-primary">
+                            Dettagli Evento
+                        </router-link>
                     </span>
                 </div>
             </div>
