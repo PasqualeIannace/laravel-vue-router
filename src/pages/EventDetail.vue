@@ -44,6 +44,11 @@ export default {
             <p>{{ evento.location }}</p>
             <p><strong>Data evento</strong> {{ evento.date }}</p>
             <p v-if="evento.user?.name">Creato da {{ evento.user.name }}</p>
+            <h5 v-if="evento.tags?.length > 0">Ringraziamo gli sponsor</h5>
+            <h5 v-else>Questo evento non ha sponsor</h5>
+            <div v-for="tag in evento.tags">
+                <p>{{ tag.sponsor }}</p>
+            </div>
         </div>
     </div>
 </template>
