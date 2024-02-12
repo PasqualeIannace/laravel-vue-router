@@ -1,4 +1,5 @@
 <script>
+import { faThinkPeaks } from "@fortawesome/free-brands-svg-icons";
 import { store } from "../store.js" //state management
 
 import axios from 'axios'; //importo Axios
@@ -15,6 +16,7 @@ export default {
         return {
             store,
             evento: [],
+            error: false
         }
     },
 
@@ -24,6 +26,7 @@ export default {
             if (response.data.success) {
                 this.evento = response.data.payload;
             } else {
+                this.error = true;
                 // redirect alla pagina 404
                 this.$router.push({ name: 'not-found' })
             }
@@ -34,7 +37,7 @@ export default {
 
 <template>
     <div v-if="!this.evento">Caricamento...</div>
-    <div v-else>
+    <div v-if="this.evento && !this.error">
         <h1>Dettagli evento {{ id }}</h1>
         <div>
             <img :src="this.evento?.image" alt="">
@@ -50,6 +53,9 @@ export default {
                 <p>{{ tag.sponsor }}</p>
             </div>
         </div>
+    </div>
+    <div v-else>
+        <h1>Errore! Evento non trovato :(</h1>
     </div>
 </template>
 
