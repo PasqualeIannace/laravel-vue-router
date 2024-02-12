@@ -15,9 +15,9 @@ export default {
 </script>
 
 <template>
-    <h1>Tutti gli eventi</h1>
+    <h1 class="px-5 mt-5">Tutti gli eventi</h1>
 
-    <div class="row">
+    <div class="row p-5">
         <div v-for="evento in  store.events " class="col-4">
             <div class="card mb-3">
                 <img :src="evento.image" class="card-img-top " alt="...">

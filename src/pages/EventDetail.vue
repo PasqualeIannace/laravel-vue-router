@@ -38,16 +38,15 @@ export default {
 <template>
     <div v-if="!this.evento">Caricamento...</div>
     <div v-if="this.evento && !this.error">
-        <h1>Dettagli evento {{ id }}</h1>
+        <h1 class="px-5 mt-5"><strong> {{ evento.name }} </strong></h1>
         <div>
             <img :src="this.evento?.image" alt="">
         </div>
-        <div>
-            <h5><strong> {{ evento.name }} </strong></h5>
-            <p>{{ evento.location }}</p>
-            <p><strong>Data evento</strong> {{ evento.date }}</p>
+        <div class="p-5">
+            <p><strong>Luogo:</strong> {{ evento.location }}</p>
+            <p><strong>Data evento:</strong> {{ evento.date }}</p>
             <p v-if="evento.user?.name">Creato da {{ evento.user.name }}</p>
-            <h5 v-if="evento.tags?.length > 0">Ringraziamo gli sponsor</h5>
+            <h4 v-if="evento.tags?.length > 0">Ringraziamo gli sponsor</h4>
             <h5 v-else>Questo evento non ha sponsor</h5>
             <div v-for="tag in evento.tags">
                 <p>{{ tag.sponsor }}</p>

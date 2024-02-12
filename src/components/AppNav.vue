@@ -32,12 +32,20 @@ export default {
 </script>
 
 <template>
-    <nav>
-        <li v-for="(item, index) in menuItems" :key="index">
-            <router-link :to="{ name: item.routeName }" class="nav-link">
-                {{ item.label }}
-            </router-link>
-        </li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/r-campania.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Regione Campania
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
+                    <router-link :to="{ name: item.routeName }" class="nav-link">
+                        {{ item.label }}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
     </nav>
 </template>
 
